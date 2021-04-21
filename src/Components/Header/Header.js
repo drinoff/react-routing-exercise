@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {NavLink} from 'react-router-dom'
 
 const HeaderStyle = styled.header`
 nav {
@@ -47,22 +48,21 @@ const Header = () =>{
     return (
         <HeaderStyle>
         <nav>
-            <a href="#">All Memes</a>
              
-            <div class="user">
-                <a href="#">Create Meme</a>
-                <div class="profile">
-                    <a href="#">My Profile</a>
-                    <a href="#">Logout</a>
+            <div className="user">
+                <NavLink to="/create">Create Meme</NavLink>
+                <div className="profile">
+                    <NavLink to="/myProfile">My Profile</NavLink>
+                    <NavLink to="/logout">Logout</NavLink>
                 </div>
             </div>
            
-            <div class="guest">
-                <div class="profile">
-                    <a href="#">Login</a>
-                    <a href="#">Register</a>
+            <div className="guest">
+                <div className="profile">
+                    <NavLink to="/login">Login</NavLink>
+                    <NavLink to="register">Register</NavLink>
                 </div>
-                <a class="active" href="#">Home Page</a>
+                <NavLink to="/">Home Page</NavLink>
             </div>
         </nav>
         </HeaderStyle>
